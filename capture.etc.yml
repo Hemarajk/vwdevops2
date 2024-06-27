@@ -1,0 +1,12 @@
+---
+- name: Capture etc/ Directory Before Patching
+  hosts: localhost  # Adjust based on your Ansible inventory setup
+  tasks:
+    - name: Create etc_before_patch.tar.gz
+      ansible.builtin.command: "tar -czvf /path/to/etc_before_patch.tar.gz /etc"
+
+- name: Capture etc/ Directory After Patching
+  hosts: localhost  # Adjust based on your Ansible inventory setup
+  tasks:
+    - name: Create etc_after_patch.tar.gz
+      ansible.builtin.command: "tar -czvf /path/to/etc_after_patch.tar.gz /etc"
